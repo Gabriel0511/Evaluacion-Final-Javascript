@@ -1,0 +1,100 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root {
+    --hue-neutral: 200;
+    --hue-error: 0;
+    --hue-correcto: 145;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    --hue: var(--hue-neutral);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correcto {
+    --hue: var(--hue-correcto);
+}
+
+body.error {
+    --hue: var(--hue-error);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.grid-btn {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black;
+}
+
+.btn.correcto {
+    --hue: var(--hue-correcto);
+    color: black;
+}
+
+.btn.error {
+    --hue: var(--hue-error);
+}
+
+.btn-empezar, .btn-siguiente, .btn-reiniciar {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hud-main-text, .hud-text {
+    text-align: center;
+}

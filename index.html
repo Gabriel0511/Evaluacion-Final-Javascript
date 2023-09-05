@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <title>index</title>
+</head>
+<body>
+    <div id="absoluteCenteredDiv">
+        <form id="basic-form" action="" method="post">
+            <div class="box">
+                <h1>Registro</h1>
+                <label for="name">Nombre 
+                <input class="username" name="name" type="text" id="name" minlength="2" placeholder="Nombre" required></label>
+                <label for="email">E-Mail 
+                <input class="username" name="email" type="email" id="email" placeholder="Email" required></label>
+                <label for="submit"><input class="button" type="submit" value="Envíar"></label>
+            </div>
+        </form>
+        <div id="resValidacion">
+            <script>
+                $(document).ready(function() {
+                    $("#basic-form").validate({
+                        rules: {
+                            email : {
+                                required: true,
+                                email: true
+                            }
+                        },
+                        messages : {
+                            name: {
+                                required: "Ingrese un nombre",
+                                minlength: "Debe tener mas de 2 letras" 
+                            },
+                            email: {
+                                required: "Ingrese un email",
+                                email: "El email es incorrecto"
+                        }
+                    },
+                    submitHandler: function(form) {
+                        window.location='game.html'
+                    }
+                    });   
+                });
+            </script>
+        </div>
+       
+    </div> 
+</body>
+</html>
